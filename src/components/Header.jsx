@@ -17,6 +17,10 @@ const Header = () => {
             </Nav>
         </Container>
     </Navbar>
+    <div className="main ">
+            <h1 className="title d-flex justify-content-center">Welcome</h1>
+            <p className="title d-flex justify-content-center">Please Click Button For Other Countries' Weather Condition</p>
+    </div>
     <div >
             <Button variant="warning" className='m-1 w-20'>
             Turkey Map

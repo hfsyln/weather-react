@@ -1,14 +1,15 @@
 import React from 'react'
 import Header from "../components/Header";
 import Wcard from "../components/Wcard";
-import SelectCity from '../components/SelectCity';
-import MapCity from '../components/TurkeyMap';
+import SelectCity from './SelectCity';
 
-const Home = () => {
+
+const Home = ({setWeather, setCitys, weather, citys}) => {
   return (
     <>
-        <Header/>
-        <Wcard/>
+        <Header setWeather={setWeather} setCitys={setCitys} />
+    
+        <Wcard setWeather={setWeather} setCitys={setCitys} citys={citys} weather={weather}/>
         
     </>
   
