@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import TurkeyMap from 'turkey-map-react';
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -7,10 +8,13 @@ import TurkeyMap from 'turkey-map-react';
 const Turkeymaps = ({setWeather, setCitys, citys, weather}) => {
    
     const [cityName, setCityName] = useState("")
+    
+    const navigate = useNavigate();
 
     const handleClick = () => {
         setCitys(cityName.split(" ")[1])
         console.log(citys)
+        navigate(`/`)
         }
 
     return (

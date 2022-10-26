@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Home from './Pages/Home';
+import Header from "./components/Header";
 import SelectCity from './Pages/SelectCity';
 import TurkeyMaps from "./Pages/TurkeyMaps";
 import WeatherPage from "./Pages/WeatherPage";
-import { BrowserRouter, Routes,Route  } from 'react-router-dom';
+import { BrowserRouter, Routes, Route  } from 'react-router-dom';
 
 
 
@@ -40,15 +41,16 @@ function App() {
   }, [citys])
 
   return (
-    <div className="App">
-    
-      <Home setWeather={setWeather} setCitys={setCitys} citys={citys} weather={weather}/> 
-      <SelectCity citys={citys} setCitys={setCitys} weather={weather}/> 
-      <TurkeyMaps city={citys} setCitys={setCitys} weather={weather}/>
-      <WeatherPage city={citys} setCitys={setCitys} weather={weather}/>
-
-    </div>
-  );
+    <BrowserRouter>
+    <Header setWeather={setWeather} setCitys={setCitys} />
+    <Routes>
+        <Route path="/" element={<Home  setWeather={setWeather} citys={citys} setCitys={setCitys} weather={weather} />} />
+        <Route path="/turkey-cities" element={<SelectCity setWeather={setWeather} citys={citys} setCitys={setCitys} weather={weather} />} />
+        <Route path="/turkey-map" element={<TurkeyMaps setWeather={setWeather} citys={citys} setCitys={setCitys} weather={weather}/>} />
+        <Route path="/weatherPage" element={<WeatherPage setWeather={setWeather} citys={citys} setCitys={setCitys} weather={weather}/>}/>
+    </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;

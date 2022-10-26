@@ -2,18 +2,19 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
+
 
 const Header = () => {
   return (
    <>
-    <Navbar bg="light" variant="light">
-        <Container>
-            <Navbar.Brand href="#home">Weather App</Navbar.Brand>
-            <Nav className="me-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#Map">Turkey cities map</Nav.Link>
-                <Nav.Link href="#List">List of cities of turkey</Nav.Link>
+    <Navbar className=" d-flex justify-content-start " bg="light" variant="light">
+        <Container className=" d-flex justify-content-start mx-0">
+        <Nav className=" d-flex justify-content-start gap-5 " >
+                <Link className='text-decoration-none text-dark'  to="/weatherPage">Weather App</Link>  
+                <Link className='text-decoration-none text-dark' to="/">Home</Link> 
+                <Link className='text-decoration-none text-dark' to="/turkey-map">Turkey cities map</Link>  
+                <Link className='text-decoration-none text-dark' to="/turkey-cities">List of cities turkey</Link>  
             </Nav>
         </Container>
     </Navbar>
@@ -21,15 +22,7 @@ const Header = () => {
             <h1 className="title d-flex justify-content-center">Welcome</h1>
             <p className="title d-flex justify-content-center">Please Click Button For Other Countries' Weather Condition</p>
     </div>
-    <div >
-            <Button variant="warning" className='m-1 w-20'>
-            Turkey Map
-            </Button>
-            <Button variant="warning" className='m-1 w-20'>
-            List of Countries
-            </Button>
-            
-    </div>
+   
 </>
   )
 }

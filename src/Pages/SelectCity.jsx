@@ -6,25 +6,33 @@ import Button from 'react-bootstrap/Button';
 
 const SelectCity = ({setWeather, setCitys, citys, weather}) => {
 
-    //const navigate = useNavigate();
+    const navigate = useNavigate();
     const { cities, city, setCity} = useTurkeyCities();
 
-const changedvalue = () => {
-  console.log(city)
-}
-   
+    console.log(city)
+    
+    console.log(cities)
+
+   const handleSubmit = (e)=>{
+    e.preventDefault();
+    setCitys(city)
+    console.log(citys)
+    navigate(`/`)
+   }
 
   return (
-    <>
-    <Form.Group className="mt-5 d-flex gap-3 align-items-center" style={{ width: '40rem' }}>
-        <Form.Select  value={city} onChange={(e) => {setCity(e.target.value)}}>
+    <Form onSubmit={handleSubmit}>
+    <Form.Group className="mt-5 d-flex gap-3 align-items-center" style={{ width: '40rem' }} >
+        <Form.Select  value={city} onChange={(e) =>
+           {setCity(e.target.value)
+            console.log(e.target.value)}}>
             {cities.map(city => (
                 <option value={city}> {city} </option>
             ))}
         </Form.Select>
         <Button style={{ width: '5rem' }} type="submit" value="Submit" >Submit</Button>
     </Form.Group>
-    </>
+    </Form>
       
   )
 }
