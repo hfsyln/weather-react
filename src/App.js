@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Home from './Pages/Home';
 import SelectCity from './Pages/SelectCity';
-import TurkeyMaps from "./Pages/TurkeyMaps"
+import TurkeyMaps from "./Pages/TurkeyMaps";
+import WeatherPage from "./Pages/WeatherPage";
+import { BrowserRouter, Routes,Route  } from 'react-router-dom';
 
 
 
@@ -42,7 +44,8 @@ function App() {
     
       <Home setWeather={setWeather} setCitys={setCitys} citys={citys} weather={weather}/> 
       <SelectCity citys={citys} setCitys={setCitys} weather={weather}/> 
-      <TurkeyMaps city={citys} setCity={setCitys} weather={weather}/>
+      <TurkeyMaps city={citys} setCitys={setCitys} weather={weather}/>
+      <WeatherPage city={citys} setCitys={setCitys} weather={weather}/>
 
     </div>
   );
