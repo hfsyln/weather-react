@@ -17,12 +17,12 @@ const SelectCity = ({setWeather, setCitys, citys, weather}) => {
     e.preventDefault();
     setCitys(city)
     console.log(citys)
-    navigate(`/`)
+    navigate(`/weatherPage`)
    }
 
   return (
     <Form onSubmit={handleSubmit}>
-    <Form.Group className="mt-5 d-flex gap-3 align-items-center" style={{ width: '40rem' }} >
+    <Form.Group className="my-5 d-flex gap-3 mx-auto" style={{ width: '40rem' }} >
         <Form.Select  value={city} onChange={(e) =>
            {setCity(e.target.value)
             console.log(e.target.value)}}>

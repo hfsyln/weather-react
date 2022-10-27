@@ -14,7 +14,7 @@ const Turkeymaps = ({setWeather, setCitys, citys, weather}) => {
     const handleClick = () => {
         setCitys(cityName.split(" ")[1])
         console.log(citys)
-        navigate(`/`)
+        navigate(`/weatherPage`)
         }
 
     return (

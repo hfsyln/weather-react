@@ -18,7 +18,9 @@ function App() {
   //state oluşturuldu değişen ilbilgisini alıp fetche ileticek 
   const [citys, setCitys] = useState("Ankara")
 
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${citys}&appid=5ed635c2454ab17fa31effbe499af547`
+  const APİKEY = process.env.REACT_APP_API_ID;
+
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${citys}&appid=${APİKEY}`
 
   //city bilgisi ile veri çekilecek başlangıç ankara
   const getWeather = async () => {
@@ -44,7 +46,7 @@ function App() {
     <BrowserRouter>
     <Header setWeather={setWeather} setCitys={setCitys} />
     <Routes>
-        <Route path="/" element={<Home  setWeather={setWeather} citys={citys} setCitys={setCitys} weather={weather} />} />
+        <Route path="/" element={<Home setWeather={setWeather} citys={citys} setCitys={setCitys} weather={weather} />} />
         <Route path="/turkey-cities" element={<SelectCity setWeather={setWeather} citys={citys} setCitys={setCitys} weather={weather} />} />
         <Route path="/turkey-map" element={<TurkeyMaps setWeather={setWeather} citys={citys} setCitys={setCitys} weather={weather}/>} />
         <Route path="/weatherPage" element={<WeatherPage setWeather={setWeather} citys={citys} setCitys={setCitys} weather={weather}/>}/>

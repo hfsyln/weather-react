@@ -9,22 +9,25 @@ const Home = ({setWeather, setCitys, weather, citys}) => {
   const navigate= useNavigate()
 
   return (
-    <>
-      
+    <div className='d-flex  flex-column gap-3' >
+       <div className="main mt-5">
+            <h1 className="title d-flex justify-content-center">Welcome</h1>
+            <p className="title d-flex justify-content-center">Please Click Button For Other Countries' Weather Condition</p>
+      </div>
 
-        <div >
-            <Button variant="warning" className='m-1 w-20' onClick={()=>navigate(`/turkey-map`)}>
+        <div className='d-flex justify-content-center gap-3 '>
+            <Button variant="warning"  onClick={()=>navigate(`/turkey-map`)}>
             Turkey Map
             </Button>
-            <Button variant="warning" className='m-1 w-20' onClick={()=>navigate(`/turkey-cities`)}>
+            <Button variant="warning"  onClick={()=>navigate(`/turkey-cities`)}>
             List of Countries
             </Button>
             
         </div>
-    
+        
         <Wcard setWeather={setWeather} setCitys={setCitys} citys={citys} weather={weather}/>
         
-    </>
+    </div>
   
   )
 }
