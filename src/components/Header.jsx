@@ -11,7 +11,7 @@ const Header = () => {
     <Navbar >
         <Container className=" d-flex justify-content-center ">
             <Nav className=" d-flex justify-content-start gap-5" >
-                <Link className='text-decoration-none text-dark'  to="/weatherPage">Weather App</Link>  
+                <Link className='text-decoration-none text-dark'  to="/weatherPage">Weather App</Link>   
                 <Link className='text-decoration-none text-dark' to="/">Home</Link> 
                 <Link className='text-decoration-none text-dark' to="/turkey-map">Turkey cities map</Link>  
                 <Link className='text-decoration-none text-dark' to="/turkey-cities">List of cities Turkey</Link>  
